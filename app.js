@@ -61,22 +61,7 @@ function determineWords(speech, words) {
     speech.text =
       "I am watching you using me and getting excited, and also i can see other projects being displayed just like I am";
   } else if (words.includes("tell me a joke")) {
-    speech.text = "The joke is you, you have been Rickrolled, ha ha.";
+    speech.text = "pinak sir is a very good dancer";
     
-  } else if (words.includes("open Google")) {
-    speech.text = "Opening Google for you now.";
-    window.open("https://www.google.com");
-  } else if (words.includes("open Facebook")) {
-    speech.text = "Opening Facebook for you now.";
-    window.open("https://www.facebook.com");
-  } else if (words.includes("open YouTube")) {
-    speech.text = "Opening YouTube for you now.";
-    window.open("https://www.youtube.com");
-  } else if (words.includes("open Gmail")) {
-    speech.text = "Opening Gmail for you now.";
-    window.open("https://www.gmail.com");
-  } else if (words.includes("sing me a song")) {
-    speech.text =
-      "My money don't jiggle jiggle, it folds. I'd like to see you wiggle wiggle, for sure. It makes me wanna dribble dribble, you know. Riding in my Fiat, you really have to see it.";
-  }
+  } 
 }
