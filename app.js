@@ -56,13 +56,13 @@ function determineWords(speech, words) {
   } else if (words.includes("Who is the Academic Director of the School")) {
     speech.text = "Dr. Manoj Kumar Paul";
   } else if (words.includes("what is your name")) {
-    speech.text = "My name is Sterling.";
-  } else if (words.includes("what are you doing")) {
+    speech.text = "My name is Diya";
+  } else if (words.includes("What are you doing")) {
     speech.text =
-      "Nothing much, just currently planning a strategy with other robots and artificial intelligence to take over mankind. Another chill day, really.";
+      "I am watching you using me and getting excited, and also i can see other projects being displayed just like I am";
   } else if (words.includes("tell me a joke")) {
     speech.text = "The joke is you, you have been Rickrolled, ha ha.";
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    
   } else if (words.includes("open Google")) {
     speech.text = "Opening Google for you now.";
     window.open("https://www.google.com");
