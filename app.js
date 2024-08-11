@@ -53,8 +53,8 @@ function determineWords(speech, words) {
   if (words.includes("who is the vice principal of the school")) {
     speech.text =
       "Miss Supriya Das is the V.P. of the school, she is very sweet and caring.";
-  } else if (words.includes("")) {
-    speech.text = "My master, Danielle Loyola.";
+  } else if (words.includes("Who is the Academic Director of the School")) {
+    speech.text = "Dr. Manoj Kumar Paul";
   } else if (words.includes("what is your name")) {
     speech.text = "My name is Sterling.";
   } else if (words.includes("what are you doing")) {
