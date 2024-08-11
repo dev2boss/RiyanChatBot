@@ -1,0 +1,245 @@
+body {
+  width: 100%;
+  height: 100vh; /* Full height */
+  display: flex; /* Flex for better alignment */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Background gradient and animation */
+  background: linear-gradient(
+    90deg,
+    rgba(173, 0, 30, 1) 35%,
+    rgba(255, 27, 58, 1) 100%
+  );
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC")
+    repeat;
+  background-size: 50px 50px;
+
+  /* Animation for background scrolling */
+  animation: bg-scrolling 0.92s linear infinite;
+}
+
+@keyframes bg-scrolling {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.robotCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 90vh; /* Restrict height to allow scrolling */
+  width: 100%;
+  padding-bottom: 2rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly less shadow */
+  backdrop-filter: blur(2px); /* Reduced blur amount */
+  border: 1px solid rgba(243, 244, 244, 0.31);
+}
+
+.robotContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding: 3rem;
+}
+
+.robot {
+  margin-top: -2rem;
+  height: 20rem;
+  width: auto;
+}
+
+.button {
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  background-color: rgb(245, 24, 57);
+  border: none;
+  color: #fff;
+  padding: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+  width: fit-content;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #ff3445;
+  border-radius: 4px;
+  margin-top: 2rem;
+  border-radius: 32px;
+}
+
+.button:hover {
+  background: rgb(245, 24, 57);
+  box-shadow: 0px 2px 10px 5px #c8c8c9;
+  color: #fff;
+}
+
+.button:after {
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.collapsible {
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 4px;
+  position: relative;
+  background-color: #000;
+  border: none;
+  color: #000;
+  padding: 20px;
+  width: 70rem;
+  height: 70rem;
+  max-height: fit-content;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #193047;
+  border-radius: 4px;
+}
+
+.active,
+.collapsible:hover {
+  background: #fff;
+  box-shadow: 0px 2px 10px 5px #1abc9c;
+  color: #000;
+}
+
+.commandOptions {
+  width: 20rem;
+  display: none;
+  gap: 3rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 300px; /* Adjust height as needed */
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: rgba(131, 176, 182, 0.4);
+  border-style: solid;
+  border-width: thin;
+  border-color: #193047;
+}
+
+.box {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Container to hold the plane */
+.plane-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none; /* Prevent interaction with the plane */
+  z-index: 1000; /* Ensure the plane is above other elements */
+}
+
+/* Style the plane */
+.plane {
+  position: absolute;
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  transform: rotate(0deg);
+  animation: fly 5s linear infinite; /* Infinite animation */
+}
+
+/* Keyframes for the plane's flying path */
+@keyframes fly {
+  0% {
+    left: 0%;
+    top: 50%;
+    transform: rotate(0deg);
+  }
+  25% {
+    left: 50%;
+    top: 10%;
+    transform: rotate(45deg);
+  }
+  50% {
+    left: 100%;
+    top: 50%;
+    transform: rotate(90deg);
+  }
+  75% {
+    left: 50%;
+    top: 90%;
+    transform: rotate(135deg);
+  }
+  100% {
+    left: 0%;
+    top: 50%;
+    transform: rotate(180deg);
+  }
+}
+
+/* Trail effect behind the plane */
+.plane:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: -50px;
+  left: 15px;
+  filter: blur(10px);
+  transform: rotate(0deg);
+  animation: trail 5s linear infinite;
+}
+
+@keyframes trail {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
