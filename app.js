@@ -54,14 +54,17 @@ function determineWords(speech, words) {
     speech.text =
       "Miss Supriya Das is the V.P. of the school, she is very sweet and caring.";
   } else if (words.includes("Who is the Academic Director of the School")) {
-    speech.text = "Dr. Manoj Kumar Paul";
+    speech.text = "Dr. Manoj Kumar Paul, he has a charming personality";
   } else if (words.includes("what is your name")) {
     speech.text = "My name is Diya";
   } else if (words.includes("What are you doing")) {
     speech.text =
       "I am watching you using me and getting excited, and also i can see other projects being displayed just like I am";
   } else if (words.includes("tell me a joke")) {
-    speech.text = "pinak sir is a very good dancer";
+    speech.text = "peenak sir is a very good dancer";
+    
+  } else if (words.includes("Which standard is the naughtiest in the school")) {
+    speech.text = "standard 7";
     
   } 
 }
